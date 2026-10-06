@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RST Group | Trucking and logistics across Indonesia since 1994</title>
+<meta name="description" content="RST Group moves cargo for Indonesian and international shippers: GPS tracked trucking, freight forwarding, customs clearance (PPJK) and warehousing. Get a quote on WhatsApp.">
+<meta property="og:title" content="RST Group | Trucking and logistics across Indonesia">
+<meta property="og:description" content="GPS tracked trucking, freight forwarding, customs clearance and warehousing since 1994.">
+<meta property="og:image" content="img/truck.webp">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#122C59">
+<link rel="icon" href="img/favicon.png">
+<link rel="preload" as="image" href="img/truck-sm.webp" media="(max-width: 767px)">
+<link rel="preload" as="image" href="img/truck.webp" media="(min-width: 768px)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: oklch(0.30 0.085 262);
+  --navy-deep: oklch(0.24 0.07 262);
+  --orange: oklch(0.73 0.17 52);
+  --orange-hover: oklch(0.78 0.15 55);
+  --ink: oklch(0.22 0.03 262);
+  --muted: oklch(0.44 0.025 262);
+  --paper: oklch(0.985 0.004 262);
+  --mist: oklch(0.955 0.01 262);
+  --line: oklch(0.88 0.012 262);
+  --on-navy: oklch(0.97 0.008 262);
+  --on-navy-muted: oklch(0.82 0.03 262);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --wrap: 1200px;
+  --gutter: 16px;
+}
+@media (min-width: 768px) { :root { --gutter: 32px; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: Manrope, system-ui, sans-serif; font-size: 16px; line-height: 24px;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3 { margin: 0; font-weight: 700; text-wrap: balance; letter-spacing: -0.02em; }
+p, li, dd { text-wrap: pretty; }
+p { margin: 0; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+.skip { position: absolute; left: 16px; top: -64px; z-index: 100; background: var(--orange); color: var(--navy-deep); padding: 8px 12px; border-radius: 8px; font-weight: 600; }
+.skip:focus { top: 16px; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; border-radius: 4px; }
+
+.eyebrow { font-size: 14px; line-height: 20px; font-weight: 600; color: var(--muted); letter-spacing: 0.02em; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 48px;
+  padding: 12px 24px; border-radius: 999px; border: 0;
+  font: 600 16px/24px Manrope, sans-serif; text-decoration: none; cursor: pointer;
+  background: var(--orange); color: var(--navy-deep);
+  transition: background-color 200ms var(--ease), transform 200ms var(--ease);
+}
+.btn:hover { background: var(--orange-hover); }
+.btn:active { transform: translateY(1px) scale(0.98); }
+.btn svg { width: 20px; height: 20px; flex: none; }
+.btn-sm { min-height: 40px; padding: 8px 16px; font-size: 14px; line-height: 20px; }
+.link-arrow { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; font-weight: 600; text-decoration: none; }
+.link-arrow svg { width: 18px; height: 18px; transition: transform 200ms var(--ease); }
+.link-arrow:hover svg { transform: translateX(4px); }
+
+/* Header */
+.site-header { position: sticky; top: 0; z-index: 50; background: var(--navy); color: var(--on-navy); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { display: flex; align-items: center; min-height: 48px; }
+.logo img { width: 120px; }
+.nav-links { display: none; gap: 32px; align-items: center; }
+.nav-links a { font-size: 14px; line-height: 20px; font-weight: 600; text-decoration: none; color: var(--on-navy-muted); padding: 12px 0; transition: color 200ms var(--ease); }
+.nav-links a:hover, .nav-links a[aria-current="true"] { color: var(--on-navy); }
+.nav-links .btn { color: var(--navy-deep); }
+.menu-btn { position: relative; width: 48px; height: 48px; margin-right: -12px; background: none; border: 0; color: inherit; cursor: pointer; }
+.menu-btn span { position: absolute; left: 14px; width: 20px; height: 2px; background: currentColor; border-radius: 2px; transition: transform 400ms var(--ease), top 400ms var(--ease); }
+.menu-btn span:first-child { top: 19px; }
+.menu-btn span:last-child { top: 27px; }
+.menu-btn[aria-expanded="true"] span:first-child { top: 23px; transform: rotate(45deg); }
+.menu-btn[aria-expanded="true"] span:last-child { top: 23px; transform: rotate(-45deg); }
+.mobile-menu {
+  position: fixed; inset: 64px 0 0; z-index: 49; background: var(--navy); color: var(--on-navy);
+  padding: 32px var(--gutter); display: flex; flex-direction: column; gap: 8px;
+  visibility: hidden; opacity: 0; transition: opacity 300ms var(--ease), visibility 300ms;
+}
+.mobile-menu.open { visibility: visible; opacity: 1; }
+.mobile-menu a:not(.btn) {
+  font-size: 30px; line-height: 36px; font-weight: 600; text-decoration: none; padding: 12px 0;
+  transform: translateY(24px); opacity: 0; transition: transform 500ms var(--ease), opacity 500ms var(--ease);
+}
+.mobile-menu .btn { margin-top: 24px; align-self: flex-start; opacity: 0; transition: opacity 500ms var(--ease) 250ms; }
+.mobile-menu.open a { transform: none; opacity: 1; }
+.mobile-menu.open a:nth-child(2) { transition-delay: 50ms; }
+.mobile-menu.open a:nth-child(3) { transition-delay: 100ms; }
+.mobile-menu.open a:nth-child(4) { transition-delay: 150ms; }
+@media (min-width: 900px) {
+  .nav-links { display: flex; }
+  .menu-btn, .mobile-menu { display: none; }
+}
+
+/* Hero */
+.hero { padding: 40px 0 0; background: var(--paper); }
+.hero-top { display: grid; gap: 16px; }
+.hero h1 { color: var(--navy-deep); font-size: 36px; line-height: 40px; max-width: 680px; }
+.hero-sub { max-width: 520px; font-size: 16px; line-height: 24px; color: var(--muted); }
+.hero-actions { margin-top: 8px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; }
+.hero-actions .link-arrow { color: var(--navy-deep); }
+.hero-media { display: block; margin: 32px 0 0; aspect-ratio: 4 / 3; overflow: hidden; background: oklch(0.88 0.015 255); }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 58% 72%; }
+@media (min-width: 768px) {
+  .hero { padding-top: 64px; }
+  .hero h1 { font-size: 48px; line-height: 1.05; }
+  .hero-sub { font-size: 18px; line-height: 28px; }
+  .hero-media { margin: 48px var(--gutter) 0; aspect-ratio: 16 / 7; border-radius: 24px; }
+}
+@media (min-width: 1100px) {
+  .hero-top { grid-template-columns: 7fr 5fr; gap: 64px; align-items: end; }
+  .hero h1 { font-size: 60px; line-height: 1.05; }
+  .hero-media { max-width: calc(var(--wrap) - 2 * var(--gutter)); margin-inline: auto; aspect-ratio: 21 / 9; }
+}
+
+/* Clients */
+.clients { padding: 32px 0 40px; border-bottom: 1px solid var(--line); background: var(--paper); }
+.clients .wrap { display: flex; flex-direction: column; gap: 16px; }
+.clients ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 16px; align-items: center; }
+.clients img { width: 100%; max-width: 132px; margin: 0 auto; filter: brightness(0.5) contrast(1.1); opacity: 0.85; }
+@media (min-width: 768px) {
+  .clients .wrap { flex-direction: row; align-items: center; gap: 48px; }
+  .clients .eyebrow { flex: none; width: 160px; }
+  .clients ul { flex: 1; grid-template-columns: repeat(5, 1fr); }
+}
+
+/* Section scaffolding */
+section { scroll-margin-top: 64px; }
+.block { padding: 64px 0; }
+@media (min-width: 768px) { .block { padding: 96px 0; } }
+.h2 { font-size: 30px; line-height: 36px; color: var(--navy-deep); max-width: 680px; }
+@media (min-width: 768px) { .h2 { font-size: 48px; line-height: 1.05; } }
+.lede { margin-top: 16px; max-width: 600px; font-size: 18px; line-height: 28px; color: var(--muted); }
+
+/* About + facts */
+.about { background: var(--mist); }
+.about-grid { display: grid; gap: 40px; }
+.facts { margin: 0; display: grid; }
+.facts div { display: grid; grid-template-columns: 112px 1fr; gap: 16px; align-items: baseline; padding: 16px 0; border-top: 1px solid var(--line); }
+.facts div:last-child { border-bottom: 1px solid var(--line); }
+.facts dt { font-size: 30px; line-height: 36px; font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.facts dd { margin: 0; color: var(--muted); }
+.facts dd strong { display: block; color: var(--ink); font-weight: 600; }
+@media (min-width: 900px) {
+  .about-grid { grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .facts div { grid-template-columns: 144px 1fr; padding: 24px 0; }
+  .facts dt { font-size: 36px; line-height: 40px; }
+}
+
+/* Services */
+.services-head { display: grid; gap: 16px; margin-bottom: 48px; }
+.service { display: grid; gap: 24px; padding: 40px 0; border-top: 1px solid var(--line); }
+.service:last-child { border-bottom: 1px solid var(--line); }
+.service figure { margin: 0; border-radius: 16px; overflow: hidden; aspect-ratio: 4 / 3; background: var(--mist); }
+.service figure img { width: 100%; height: 100%; object-fit: cover; transition: transform 800ms var(--ease); }
+.service:hover figure img { transform: scale(1.03); }
+.service-num { font-size: 14px; line-height: 20px; font-weight: 700; color: var(--orange); letter-spacing: 0.04em; }
+.service h3 { margin-top: 8px; font-size: 24px; line-height: 32px; color: var(--navy-deep); }
+.service p { margin-top: 12px; color: var(--muted); max-width: 60ch; }
+.service ul { margin: 16px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.service li { display: flex; gap: 12px; align-items: flex-start; }
+.service li svg { flex: none; width: 20px; height: 20px; margin-top: 2px; color: var(--navy); }
+@media (min-width: 900px) {
+  .services-head { grid-template-columns: 1fr 1fr; align-items: end; gap: 64px; }
+  .services-head .lede { margin-top: 0; }
+  .service { grid-template-columns: 5fr 7fr; gap: 64px; align-items: center; padding: 48px 0; }
+  .service:nth-child(even) figure { order: 2; }
+  .service h3 { font-size: 30px; line-height: 36px; }
+}
+
+/* Tagline reveal */
+.tagline { background: var(--navy); color: var(--on-navy); }
+.tagline p { font-size: 36px; line-height: 40px; font-weight: 700; letter-spacing: -0.02em; max-width: 880px; text-wrap: balance; }
+.tagline .w { opacity: 0.3; transition: opacity 600ms var(--ease); }
+.tagline .w.on { opacity: 1; }
+.tagline .accent { color: var(--orange); }
+@media (min-width: 768px) { .tagline p { font-size: 60px; line-height: 1.05; } }
+
+/* How it works */
+.steps { list-style: none; margin: 48px 0 0; padding: 0; display: grid; gap: 32px; counter-reset: step; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 48px 1fr; gap: 16px; }
+.steps li::before {
+  content: counter(step); display: grid; place-items: center; width: 48px; height: 48px; border-radius: 999px;
+  background: var(--navy); color: var(--on-navy); font-weight: 700; font-size: 18px;
+}
+.steps h3 { font-size: 20px; line-height: 28px; color: var(--navy-deep); padding-top: 10px; }
+.steps p { margin-top: 8px; color: var(--muted); }
+@media (min-width: 900px) {
+  .steps { grid-template-columns: repeat(3, 1fr); gap: 48px; position: relative; }
+  .steps::before { content: ""; position: absolute; top: 24px; left: 24px; right: 24px; height: 1px; background: var(--line); }
+  .steps li { grid-template-columns: 1fr; position: relative; }
+}
+
+/* FAQ */
+.faq { background: var(--mist); }
+.faq-grid { display: grid; gap: 40px; }
+.faq-list { border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 64px; padding: 16px 0;
+  font-size: 18px; line-height: 28px; font-weight: 600; color: var(--navy-deep); cursor: pointer; list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary svg { flex: none; width: 20px; height: 20px; transition: transform 300ms var(--ease); }
+.faq details[open] summary svg { transform: rotate(45deg); }
+.faq details p { padding: 0 0 24px; max-width: 65ch; color: var(--muted); }
+@media (min-width: 900px) { .faq-grid { grid-template-columns: 5fr 7fr; gap: 64px; } }
+
+/* Final CTA */
+.cta { background: var(--navy-deep); color: var(--on-navy); position: relative; overflow: hidden; }
+.cta .h2 { color: var(--on-navy); max-width: 880px; }
+.cta .lede { color: var(--on-navy-muted); }
+.cta-actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
+.cta-actions .link-arrow { color: var(--on-navy); }
+
+/* Footer */
+.site-footer { background: var(--navy-deep); color: var(--on-navy-muted); border-top: 1px solid oklch(0.36 0.06 262); padding: 40px 0 112px; font-size: 14px; line-height: 20px; }
+.site-footer .wrap { display: grid; gap: 24px; }
+.site-footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 24px; }
+.site-footer a { display: inline-block; padding: 12px 0; text-decoration: none; }
+.site-footer a:hover { color: var(--on-navy); }
+@media (min-width: 900px) {
+  .site-footer { padding-bottom: 40px; }
+  .site-footer .wrap { grid-template-columns: auto 1fr auto; align-items: center; }
+  .site-footer ul { justify-content: center; }
+}
+
+/* Mobile sticky CTA */
+.sticky-cta {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom));
+  background: oklch(0.985 0.004 262 / 0.96); border-top: 1px solid var(--line);
+  transform: translateY(100%); transition: transform 400ms var(--ease);
+}
+.sticky-cta.show { transform: none; }
+.sticky-cta .btn { width: 100%; justify-content: center; }
+@media (min-width: 900px) { .sticky-cta { display: none; } }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 800ms var(--ease), transform 800ms var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 1ms !important; }
+  .reveal { opacity: 1; transform: none; }
+  .tagline .w { opacity: 1; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- Phosphor icons (regular) -->
+  <symbol id="i-wa" viewBox="0 0 256 256"><path fill="currentColor" d="M187.58 144.84l-32-16a8 8 0 0 0-8 .5l-14.69 9.8a40.550 40.550 0 0 1-16-16l9.8-14.690a8 8 0 0 0 .5-8l-16-32A8 8 0 0 0 104 64a40 40 0 0 0-40 40 88.1 88.1 0 0 0 88 88 40 40 0 0 0 40-40 8 8 0 0 0-4.42-7.16ZM152 176a72.08 72.08 0 0 1-72-72 24 24 0 0 1 19.29-23.54l11.48 23L101 118a8 8 0 0 0-.73 7.51 56.47 56.47 0 0 0 30.15 30.15A8 8 0 0 0 138 155l14.61-9.74 23 11.48A24 24 0 0 1 152 176ZM128 24a104 104 0 0 0-91.82 152.88l-11.35 34.050a16 16 0 0 0 20.24 20.24l34.050-11.35A104 104 0 1 0 128 24Zm0 192a87.87 87.87 0 0 1-44.06-11.81 8 8 0 0 0-6.54-.67L40 216l12.47-37.4a8 8 0 0 0-.66-6.54A88 88 0 1 1 128 216Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 256 256"><path fill="currentColor" d="m221.66 133.66-72 72a8 8 0 0 1-11.32-11.32L196.69 136H40a8 8 0 0 1 0-16h156.69l-58.35-58.34a8 8 0 0 1 11.32-11.32l72 72a8 8 0 0 1 0 11.32Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 256 256"><path fill="currentColor" d="m229.66 77.66-128 128a8 8 0 0 1-11.32 0l-56-56a8 8 0 0 1 11.32-11.32L96 188.69 218.34 66.34a8 8 0 0 1 11.32 11.32Z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 256 256"><path fill="currentColor" d="M224 128a8 8 0 0 1-8 8h-80v80a8 8 0 0 1-16 0v-80H40a8 8 0 0 1 0-16h80V40a8 8 0 0 1 16 0v80h80a8 8 0 0 1 8 8Z"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="RST Group home"><img src="img/logo-light.png" alt="RST Group" width="120" height="31"></a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-sm" href="https://wa.me/628112188161?text=Hi%20RST%2C%20I%20would%20like%20a%20trucking%20quote." target="_blank" rel="noopener">Get a quote</a>
+    </nav>
+    <button class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+  <a href="#services">Services</a>
+  <a href="#how">How it works</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a class="btn" href="https://wa.me/628112188161?text=Hi%20RST%2C%20I%20would%20like%20a%20trucking%20quote." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Get a quote on WhatsApp</a>
+</nav>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap hero-top">
+      <h1 id="hero-title">Trucking across Indonesia, tracked from dispatch to delivery.</h1>
+      <div>
+        <p class="hero-sub">Since 1994, RST Group has moved cargo for Indonesian and international shippers. 175 trucks with live GPS, plus forwarding, customs and storage under one team.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://wa.me/628112188161?text=Hi%20RST%2C%20I%20would%20like%20a%20trucking%20quote." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Get a quote on WhatsApp</a>
+          <a class="link-arrow" href="#services">See our services <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <picture class="hero-media">
+      <source media="(max-width: 767px)" srcset="img/truck-sm.webp">
+      <img src="img/truck.webp" alt="Semi trailer truck driving on a highway at sunrise" fetchpriority="high" width="1920" height="1326">
+    </picture>
+  </section>
+
+  <section class="clients" aria-label="Clients">
+    <div class="wrap">
+      <p class="eyebrow">Trusted by shippers including</p>
+      <ul>
+        <li><img src="img/client-1.png" alt="Sinarmas" width="600" height="300" loading="lazy"></li>
+        <li><img src="img/client-4.png" alt="Mayora" width="600" height="300" loading="lazy"></li>
+        <li><img src="img/client-3.png" alt="Shopee" width="600" height="300" loading="lazy"></li>
+        <li><img src="img/client-2.png" alt="J&amp;T Express" width="600" height="300" loading="lazy"></li>
+        <li><img src="img/client-5.png" alt="JNE Express" width="600" height="300" loading="lazy"></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <p class="eyebrow">About RST Group</p>
+        <h2 class="h2" id="about-title" style="margin-top:12px">Three decades on Indonesian roads.</h2>
+        <p class="lede">We started as a trucking company in 1994 and grew into a logistics partner that handles the whole lane: pickup, line haul, customs, storage and final delivery. One team owns your shipment from start to finish, so there is always someone who knows where it is.</p>
+      </div>
+      <dl class="facts reveal">
+        <div><dt>1994</dt><dd><strong>Founded</strong>30+ years of trucking and logistics operations</dd></div>
+        <div><dt>175</dt><dd><strong>Trucks in the fleet</strong>Wingbox, trailer and CDD long units</dd></div>
+        <div><dt>24/7</dt><dd><strong>GPS on every unit</strong>Live position from dispatch to delivery</dd></div>
+        <div><dt>4</dt><dd><strong>Services, one contract</strong>Trucking, forwarding, customs and warehousing</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="block" id="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="services-head reveal">
+        <div>
+          <p class="eyebrow">Services</p>
+          <h2 class="h2" id="services-title" style="margin-top:12px">Everything your cargo needs, under one roof.</h2>
+        </div>
+        <p class="lede">Start with one service or hand us the full lane. Either way you get one point of contact and one shipment view.</p>
+      </div>
+
+      <div class="services">
+        <article class="service reveal">
+          <figure><img src="img/fleet-yard.webp" alt="Aerial view of box trailers parked in rows at a truck yard" width="1200" height="799" loading="lazy"></figure>
+          <div>
+            <p class="service-num">01</p>
+            <h3>Trucking operations</h3>
+            <p>Domestic and international freight on our own fleet. Our control tower tracks every milestone on the road, from dispatch to proof of delivery.</p>
+            <ul>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Wingbox, trailer and CDD long trucks</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Dedicated fleet or on call capacity</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Live GPS position on every unit</li>
+            </ul>
+          </div>
+        </article>
+        <article class="service reveal">
+          <figure><img src="img/port.webp" alt="Aerial view of a container port with ships, cranes and trucks at the terminal" width="1200" height="799" loading="lazy"></figure>
+          <div>
+            <p class="service-num">02</p>
+            <h3>Freight forwarding</h3>
+            <p>Air, sea and land freight booked and coordinated by one team. Thirty years of lanes and carrier relationships, built into a repeatable process.</p>
+            <ul>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Air, sea and land in one booking</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Port pickup connected to our trucking</li>
+            </ul>
+          </div>
+        </article>
+        <article class="service reveal">
+          <figure><img src="img/customs-docs.webp" alt="Shipping documents and a clipboard on a desk" width="800" height="1200" loading="lazy"></figure>
+          <div>
+            <p class="service-num">03</p>
+            <h3>Customs clearance (PPJK)</h3>
+            <p>Our licensed customs brokers clear goods quickly, keep import duties in check and turn your customs data into supply chain insight.</p>
+            <ul>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Import and export clearance</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Available even if another company ships your cargo</li>
+            </ul>
+          </div>
+        </article>
+        <article class="service reveal">
+          <figure><img src="img/warehouse.webp" alt="Warehouse staff walking between pallet racks" width="1200" height="800" loading="lazy"></figure>
+          <div>
+            <p class="service-num">04</p>
+            <h3>Warehousing and storage</h3>
+            <p>Secure space for inbound stock, buffer inventory and cross docking, close to the trucks that move it next.</p>
+            <ul>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>24/7 security, CCTV and access control</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Daily, weekly or monthly storage plans</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Handling processes built to lower your cost per pallet</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block tagline" aria-label="Our promise">
+    <div class="wrap">
+      <p data-reveal-words>We move the freight. <span class="accent">You keep your promise</span> to your customers.</p>
+    </div>
+  </section>
+
+  <section class="block" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">How it works</p>
+        <h2 class="h2" id="how-title" style="margin-top:12px">From first message to delivered, in three steps.</h2>
+      </div>
+      <ol class="steps reveal">
+        <li><div><h3>Send your route and cargo</h3><p>Origin, destination, cargo type and volume. A short WhatsApp message is enough to start.</p></div></li>
+        <li><div><h3>Get truck and rate confirmed</h3><p>We match the right truck type and schedule, then send you a written quote.</p></div></li>
+        <li><div><h3>Track it until delivered</h3><p>Follow live GPS position and milestone updates from pickup to proof of delivery.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap faq-grid">
+      <div class="reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="h2" id="faq-title" style="margin-top:12px">Questions shippers ask us first.</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details><summary>Which routes do you cover?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>We run trucking across Indonesia and connect other islands through sea and air forwarding. Send your origin and destination and we will confirm availability and lead time for that lane.</p></details>
+        <details><summary>What truck types are available?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Our fleet includes wingbox trucks, trailers and CDD long units, available as dedicated capacity or on call.</p></details>
+        <details><summary>Can I track my shipment?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Yes. Every unit carries GPS, and our control tower shares live position and milestone updates from pickup to delivery.</p></details>
+        <details><summary>Do you clear customs if another company ships my cargo?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Yes. Our PPJK team handles import and export clearance on its own, whether or not we move the cargo.</p></details>
+        <details><summary>How flexible is warehouse storage?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Storage plans run daily, weekly or monthly, so you only pay for the space and time you actually use.</p></details>
+        <details><summary>What do you need from me for a quote?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Origin, destination, cargo type, estimated weight or volume and how often you ship. Send it on WhatsApp or email and we will reply with a written quote.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="block cta" id="contact" aria-labelledby="cta-title">
+    <div class="wrap reveal">
+      <h2 class="h2" id="cta-title">Tell us the route.<br> We will send the truck and the rate.</h2>
+      <p class="lede">Message our team on WhatsApp, or email informasi@rst-indonesia.com.</p>
+      <div class="cta-actions">
+        <a class="btn" href="https://wa.me/628112188161?text=Hi%20RST%2C%20I%20would%20like%20a%20trucking%20quote." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Get a quote on WhatsApp</a>
+        <a class="link-arrow" href="mailto:informasi@rst-indonesia.com">Email us <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <img src="img/logo-light.png" alt="RST Group" width="104" height="27">
+    <ul>
+      <li><a href="https://www.linkedin.com/company/pt-rancang-semesta-transportindo" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://share.google/hdicw2qSI7uCH5kFz" target="_blank" rel="noopener">Google Maps</a></li>
+      <li><a href="https://wa.me/628112188161" target="_blank" rel="noopener">WhatsApp</a></li>
+      <li><a href="mailto:informasi@rst-indonesia.com">informasi@rst-indonesia.com</a></li>
+    </ul>
+    <p>© 2026 PT Rancang Semesta Transportindo</p>
+  </div>
+</footer>
+
+<div class="sticky-cta" aria-hidden="true">
+  <a class="btn" tabindex="-1" href="https://wa.me/628112188161?text=Hi%20RST%2C%20I%20would%20like%20a%20trucking%20quote." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Get a quote on WhatsApp</a>
+</div>
+
+<script>
+(() => {
+  // Mobile menu
+  const btn = document.querySelector('.menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const setMenu = (open) => {
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menu.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+  btn.addEventListener('click', () => setMenu(btn.getAttribute('aria-expanded') !== 'true'));
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+    if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+  }), { rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // Sticky mobile CTA: visible once the hero has scrolled away, hidden at the final CTA
+  const sticky = document.querySelector('.sticky-cta');
+  const stickyLink = sticky.querySelector('a');
+  const seen = { hero: true, cta: false };
+  const sync = () => {
+    const show = !seen.hero && !seen.cta;
+    sticky.classList.toggle('show', show);
+    sticky.setAttribute('aria-hidden', !show);
+    stickyLink.tabIndex = show ? 0 : -1;
+  };
+  new IntersectionObserver(([en]) => { seen.hero = en.isIntersecting; sync(); }).observe(document.querySelector('.hero'));
+  new IntersectionObserver(([en]) => { seen.cta = en.isIntersecting; sync(); }).observe(document.getElementById('contact'));
+
+  // Current nav item
+  const links = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+  const navIO = new IntersectionObserver((entries) => entries.forEach((en) => {
+    if (!en.isIntersecting) return;
+    links.forEach((a) => a.setAttribute('aria-current', a.getAttribute('href') === '#' + en.target.id));
+  }), { rootMargin: '-40% 0px -55% 0px' });
+  links.forEach((a) => { const s = document.querySelector(a.getAttribute('href')); if (s) navIO.observe(s); });
+
+  // Tagline word reveal, rAF throttled
+  const para = document.querySelector('[data-reveal-words]');
+  const wrapWords = (node) => [...node.childNodes].forEach((n) => {
+    if (n.nodeType === 3) {
+      const frag = document.createDocumentFragment();
+      n.textContent.split(/(\s+)/).forEach((t) => {
+        if (!t) return;
+        if (/^\s+$/.test(t)) { frag.append(t); return; }
+        const s = document.createElement('span'); s.className = 'w'; s.textContent = t; frag.append(s);
+      });
+      n.replaceWith(frag);
+    } else wrapWords(n);
+  });
+  wrapWords(para);
+  const words = [...para.querySelectorAll('.w')];
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const r = para.getBoundingClientRect();
+    const vh = innerHeight;
+    const p = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (r.height + vh * 0.35)));
+    const n = Math.round(p * words.length);
+    words.forEach((w, i) => w.classList.toggle('on', i < n));
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  update();
+})();
+</script>
+</body>
+</html>
